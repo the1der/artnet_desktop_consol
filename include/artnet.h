@@ -206,7 +206,7 @@ typedef struct __attribute__((packed)) SArtPollReply
   uint8_t     SubSwitch;
   uint8_t     OemHi;
   uint8_t     Oem;
-  uint8_t     UbeaVersion;
+  uint8_t     UbeaVersion; //23
   SStatus1    Status1;
   uint8_t     EstaManLo;
   uint8_t     EstaManHi;
