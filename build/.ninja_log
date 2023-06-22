@@ -1,8 +1,4 @@
 # ninja log v5
-0	6	0	clean	a7c70eacb11a5051
-5	903	1682092564159861240	build.ninja	11bb78c264634265
-9	7404	1682289808408519897	CMakeFiles/myprogram.dir/src/artnet_scanner.cpp.o	6c30c37df9245076
-7404	7676	1682289808688523332	myprogram	dadb32307196f2cf
-7	5001	1682289291138038740	CMakeFiles/myprogram.dir/src/main.cpp.o	168f3cffa693919a
-7	7551	1682289834672827859	CMakeFiles/myprogram.dir/src/artnet_scanner.cpp.o	6c30c37df9245076
-7551	7860	1682289834988831397	myprogram	dadb32307196f2cf
+7	5932	1687351775261842179	CMakeFiles/myprogram.dir/src/main.cpp.o	1ebf8ee447917dde
+7	9252	1687351778574008601	CMakeFiles/myprogram.dir/src/artnet_scanner.cpp.o	5f0e8679df92f2b0
+9252	9584	1687351778914025690	myprogram	fe3568bd416f9c5

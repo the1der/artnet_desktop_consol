@@ -1,13 +1,14 @@
 [
 {
-  "directory": "/home/medamine/Desktop/Projects/artnet_desktop_consol/build",
-  "command": "/usr/bin/g++-11  -DBOOST_ALL_NO_LIB -I../include  -g   -fcoroutines -std=gnu++2a -o CMakeFiles/myprogram.dir/src/artnet_scanner.cpp.o -c /home/medamine/Desktop/Projects/artnet_desktop_consol/src/artnet_scanner.cpp",
-  "file": "/home/medamine/Desktop/Projects/artnet_desktop_consol/src/artnet_scanner.cpp"
+  "directory": "/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol/build",
+  "command": "/usr/bin/g++ -DBOOST_SYSTEM_NO_LIB -DBOOST_THREAD_NO_LIB -I/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol/include -g -std=gnu++20 -fcoroutines -o CMakeFiles/myprogram.dir/src/artnet_scanner.cpp.o -c /home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol/src/artnet_scanner.cpp",
+  "file": "/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol/src/artnet_scanner.cpp",
+  "output": "CMakeFiles/myprogram.dir/src/artnet_scanner.cpp.o"
 },
-
 {
-  "directory": "/home/medamine/Desktop/Projects/artnet_desktop_consol/build",
-  "command": "/usr/bin/g++-11  -DBOOST_ALL_NO_LIB -I../include  -g   -fcoroutines -std=gnu++2a -o CMakeFiles/myprogram.dir/src/main.cpp.o -c /home/medamine/Desktop/Projects/artnet_desktop_consol/src/main.cpp",
-  "file": "/home/medamine/Desktop/Projects/artnet_desktop_consol/src/main.cpp"
+  "directory": "/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol/build",
+  "command": "/usr/bin/g++ -DBOOST_SYSTEM_NO_LIB -DBOOST_THREAD_NO_LIB -I/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol/include -g -std=gnu++20 -fcoroutines -o CMakeFiles/myprogram.dir/src/main.cpp.o -c /home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol/src/main.cpp",
+  "file": "/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol/src/main.cpp",
+  "output": "CMakeFiles/myprogram.dir/src/main.cpp.o"
 }
 ]

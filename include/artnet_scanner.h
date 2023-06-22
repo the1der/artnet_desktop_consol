@@ -52,6 +52,27 @@ struct node_str_t
    bool     NodeIsDHCPCapable;
    bool     NodesIPIsDHCPConfigured;
 };
+
+enum LedMode
+{
+    NO_CMD,
+    LED_NORMAL,
+    LED_MUTE,
+    LED_LOCATE,
+};
+
+struct ArtAddressPacket
+{
+    char shortName[18];
+    char longName[64];
+    char subSwitch[4];
+    char netSwitch[4];
+    char swIn[4][4];
+    char swOut[4][4];
+    uint8_t led_cmd;
+};
+
+
 class Artnet{
     private:
         static std::vector<node_t> node_vect;
@@ -187,6 +208,10 @@ class Artnet{
          * @return std::vector <node_str_t> 
          */
         static std::vector <node_str_t> result_to_str(std::vector<node_t> nodeVect);
+
+        static void genArtAddressPacket(ArtAddressPacket artAddressPacket, uint8_t *buff);
+
+        static int sendArtAdress(node_t node, ArtAddressPacket artAddressPacket);
         
 };
 

@@ -6,6 +6,7 @@
 			[
 				{
 					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.5"
@@ -38,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "myprogram::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-myprogram-Debug-9745a087dcd83ae9e437.json",
+					"jsonFile" : "target-myprogram-Debug-cc74c7fac904d5bbcc58.json",
 					"name" : "myprogram",
 					"projectIndex" : 0
 				}
@@ -48,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/medamine/Desktop/Projects/artnet_desktop_consol/build",
-		"source" : "/home/medamine/Desktop/Projects/artnet_desktop_consol"
+		"build" : "/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol/build",
+		"source" : "/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 0
+		"minor" : 5
 	}
 }

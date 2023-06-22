@@ -15,7 +15,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0"
+			"value" : "/usr/local/lib/cmake/Boost-1.82.0"
 		},
 		{
 			"name" : "Boost_INCLUDE_DIR",
@@ -27,7 +27,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/include"
+			"value" : "/usr/local/include"
 		},
 		{
 			"name" : "Boost_SYSTEM_LIBRARY_RELEASE",
@@ -39,7 +39,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/usr/lib/x86_64-linux-gnu/libboost_system.a"
+			"value" : "/usr/local/lib/libboost_system.a"
 		},
 		{
 			"name" : "Boost_THREAD_LIBRARY_RELEASE",
@@ -51,7 +51,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/usr/lib/x86_64-linux-gnu/libboost_thread.a"
+			"value" : "/usr/local/lib/libboost_thread.a"
 		},
 		{
 			"name" : "CMAKE_ADDR2LINE",
@@ -107,7 +107,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/medamine/Desktop/Projects/artnet_desktop_consol/build"
+			"value" : "/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -131,7 +131,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "16"
+			"value" : "26"
 		},
 		{
 			"name" : "CMAKE_CACHE_PATCH_VERSION",
@@ -155,7 +155,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/usr/bin/cmake"
+			"value" : "/home/medamine/.local/lib/python3.10/site-packages/cmake/data/bin/cmake"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -167,7 +167,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/usr/bin/cpack"
+			"value" : "/home/medamine/.local/lib/python3.10/site-packages/cmake/data/bin/cpack"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -179,7 +179,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/usr/bin/ctest"
+			"value" : "/home/medamine/.local/lib/python3.10/site-packages/cmake/data/bin/ctest"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER",
@@ -195,7 +195,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/g++-11"
+			"value" : "/usr/bin/g++"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -323,7 +323,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/gcc-11"
+			"value" : "/usr/bin/gcc"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_AR",
@@ -550,10 +550,6 @@
 			"properties" : 
 			[
 				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
 					"name" : "HELPSTRING",
 					"value" : "No help, variable specified on the command line."
 				}
@@ -572,6 +568,18 @@
 			],
 			"type" : "INTERNAL",
 			"value" : ""
+		},
+		{
+			"name" : "CMAKE_FIND_PACKAGE_REDIRECTS_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake."
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -631,42 +639,6 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
-		},
-		{
-			"name" : "CMAKE_HAVE_PTHREADS_CREATE",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Have library pthreads"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : ""
-		},
-		{
-			"name" : "CMAKE_HAVE_PTHREAD_CREATE",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Have library pthread"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "1"
-		},
-		{
-			"name" : "CMAKE_HAVE_PTHREAD_H",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Have include pthread.h"
-				}
-			],
-			"type" : "INTERNAL",
 			"value" : "1"
 		},
 		{
@@ -679,7 +651,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/medamine/Desktop/Projects/artnet_desktop_consol"
+			"value" : "/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -967,7 +939,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/usr/share/cmake-3.16"
+			"value" : "/home/medamine/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1215,7 +1187,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake][cfound components: system thread ][v1.71.0()]"
+			"value" : "[/usr/local/lib/cmake/Boost-1.82.0/BoostConfig.cmake][cfound components: system thread ][v1.82.0()]"
 		},
 		{
 			"name" : "MyProject_BINARY_DIR",
@@ -1227,7 +1199,19 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/medamine/Desktop/Projects/artnet_desktop_consol/build"
+			"value" : "/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol/build"
+		},
+		{
+			"name" : "MyProject_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
 		},
 		{
 			"name" : "MyProject_SOURCE_DIR",
@@ -1239,23 +1223,19 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/medamine/Desktop/Projects/artnet_desktop_consol"
+			"value" : "/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol"
 		},
 		{
-			"name" : "boost_atomic_DIR",
+			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
 			"properties" : 
 			[
 				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
 					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for boost_atomic."
+					"value" : "linker supports push/pop state"
 				}
 			],
-			"type" : "PATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/cmake/boost_atomic-1.71.0"
+			"type" : "INTERNAL",
+			"value" : "TRUE"
 		},
 		{
 			"name" : "boost_headers_DIR",
@@ -1271,7 +1251,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0"
+			"value" : "/usr/local/lib/cmake/boost_headers-1.82.0"
 		},
 		{
 			"name" : "boost_system_DIR",
@@ -1287,7 +1267,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0"
+			"value" : "/usr/local/lib/cmake/boost_system-1.82.0"
 		},
 		{
 			"name" : "boost_thread_DIR",
@@ -1303,7 +1283,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/cmake/boost_thread-1.71.0"
+			"value" : "/usr/local/lib/cmake/boost_thread-1.82.0"
 		}
 	],
 	"kind" : "cache",

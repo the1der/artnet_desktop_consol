@@ -11,6 +11,7 @@
 		"commands" : 
 		[
 			"add_executable",
+			"LINK_DIRECTORIES",
 			"target_link_libraries",
 			"add_compile_options",
 			"INCLUDE_DIRECTORIES"
@@ -33,17 +34,23 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 29,
+				"line" : 14,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 22,
+				"line" : 29,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
+				"file" : 0,
+				"line" : 22,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
 				"file" : 0,
 				"line" : 13,
 				"parent" : 0
@@ -56,31 +63,40 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g  "
+					"fragment" : "-g -std=gnu++20"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 4,
 					"fragment" : "-fcoroutines"
-				},
-				{
-					"fragment" : "-std=gnu++2a"
 				}
 			],
 			"defines" : 
 			[
 				{
-					"backtrace" : 2,
-					"define" : "BOOST_ALL_NO_LIB"
+					"backtrace" : 3,
+					"define" : "BOOST_SYSTEM_NO_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "BOOST_THREAD_NO_LIB"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 4,
-					"path" : "/home/medamine/Desktop/Projects/artnet_desktop_consol/include"
+					"backtrace" : 5,
+					"path" : "/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol/include"
 				}
 			],
 			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "20"
+			},
 			"sourceIndexes" : 
 			[
 				0,
@@ -103,20 +119,21 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_system.a",
+				"fragment" : "-L/usr/local/lib",
+				"role" : "libraryPath"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/usr/local/lib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 2,
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_thread.a",
+				"backtrace" : 3,
+				"fragment" : "/usr/local/lib/libboost_system.a",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_atomic.a",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lpthread",
+				"backtrace" : 3,
+				"fragment" : "/usr/local/lib/libboost_thread.a",
 				"role" : "libraries"
 			}
 		],
