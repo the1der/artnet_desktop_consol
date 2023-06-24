@@ -209,8 +209,21 @@ class Artnet{
          */
         static std::vector <node_str_t> result_to_str(std::vector<node_t> nodeVect);
 
+        /**
+         * @brief Organize artAddress information in a buffer ti be sent
+         * 
+         * @param artAddressPacket artAdressInfomations
+         * @param buff [OUT] output buffer to store pakcet informations
+         */
         static void genArtAddressPacket(ArtAddressPacket artAddressPacket, uint8_t *buff);
 
+        /**
+         * @brief Send artAdress configuration message
+         * 
+         * @param node target node
+         * @param artAddressPacket packet to be sent
+         * @return int, 0 if sending done, else failed  
+         */
         static int sendArtAdress(node_t node, ArtAddressPacket artAddressPacket);
         
 };
