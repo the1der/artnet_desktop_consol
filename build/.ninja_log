@@ -1,4 +1,0 @@
-# ninja log v5
-7	5932	1687351775261842179	CMakeFiles/myprogram.dir/src/main.cpp.o	1ebf8ee447917dde
-7	9252	1687351778574008601	CMakeFiles/myprogram.dir/src/artnet_scanner.cpp.o	5f0e8679df92f2b0
-9252	9584	1687351778914025690	myprogram	fe3568bd416f9c5

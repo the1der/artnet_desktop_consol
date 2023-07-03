@@ -1,3 +1,0 @@
-/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol/build/CMakeFiles/myprogram.dir
-/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol/build/CMakeFiles/edit_cache.dir
-/home/medamine/Desktop/Projects/Art-Net/artnet_desktop_consol/build/CMakeFiles/rebuild_cache.dir

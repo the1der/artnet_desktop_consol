@@ -1,6 +1,8 @@
 #include "artnet_scanner.h"
 
-#include "QDebug"
+// #include "QDebug"
+#include <boost/system/system_error.hpp>
+#include <boost/throw_exception.hpp>
 std::vector<node_t> Artnet::node_vect;
 
 // #define LOCAL_TEST
@@ -31,41 +33,41 @@ void Artnet::genIpProgMsg(SIpProg *ipProg)
 
 void Artnet::megDecode(uint8_t recvBuffer[])
 {
-    qDebug() << recvBuffer ;
+     //qDebug() << recvBuffer ;
     if (memcmp(recvBuffer, ARTNET_ID, 8) != 0)
     {
-        qDebug() << "Not ArtNet packet" ;
+         //qDebug() << "Not ArtNet packet" ;
         return;
     }
     uint16_t msgOpCode= *(uint16_t*)(recvBuffer+8);
-    qDebug() << "Recieved OpCode: " << msgOpCode ;
+     //qDebug() << "Recieved OpCode: " << msgOpCode ;
     switch(msgOpCode)
     {
         case OpPoll:
-            qDebug() << "OpPoll request (LoopBack)" ;
+             //qDebug() << "OpPoll request (LoopBack)" ;
             break;
 
         case OpPollReply:
             {
-                qDebug() << "OpPollReply" ;
+                 //qDebug() << "OpPollReply" ;
                 artPollReplyDecode(recvBuffer);
             }
             break;
 
         case OpIpProg:
-            qDebug() << "OpIpProg (LoopBack)" ;
+             //qDebug() << "OpIpProg (LoopBack)" ;
             break;
 
         case OpIpProgReply:
             {
-                qDebug() << "OpIpProgReply" ;
+                 //qDebug() << "OpIpProgReply" ;
                 SIpProgReply *ipProgReply= (SIpProgReply*)recvBuffer;
                 artIpProgReplyDecode(ipProgReply);
             }
             break;
 
         default:
-            qDebug() << "Unhandled OpCode" ;
+             //qDebug() << "Unhandled OpCode" ;
             break;
     }
 }
@@ -84,11 +86,11 @@ void Artnet::artPollReplyDecode(uint8_t recvBuffer[])
         newNode.MAC[i]=recvBuffer[i+201];
     }
     for(int i=0; i<255; i++) 
-        if (recvBuffer[i]==210) qDebug() << "Status location: "  << i ;
+        if (recvBuffer[i]==210)  //qDebug() << "Status location: "  << i ;
     for (int i=0; i<10; i++)
     {
     sprintf(smth, "%u, %d\n", recvBuffer[210+i], i);
-    qDebug() << "ss " << smth ;
+     //qDebug() << "ss " << smth ;
     strcpy(smth, "\0");
     }
     newNode.Port = artPollReply->Port;
@@ -101,14 +103,14 @@ void Artnet::artPollReplyDecode(uint8_t recvBuffer[])
     {
         char deb[150];
         node_vect.push_back(newNode);
-        // qDebug() << "New node found "  << unsigned(newNode.IpAddress[0]) << unsigned(newNode.IpAddress[1]) << unsigned(newNode.IpAddress[2]) << unsigned(newNode.IpAddress[3]) << " [" << newNode.LongName << "]" ;
+        //  //qDebug() << "New node found "  << unsigned(newNode.IpAddress[0]) << unsigned(newNode.IpAddress[1]) << unsigned(newNode.IpAddress[2]) << unsigned(newNode.IpAddress[3]) << " [" << newNode.LongName << "]" ;
         sprintf(deb,"New node found, %u.%u.%u.%u [%s]", newNode.IpAddress[0], newNode.IpAddress[1], newNode.IpAddress[2], newNode.IpAddress[3], newNode.LongName);
-        qDebug() << deb ;
+         //qDebug() << deb ;
     }
     else
     { 
         node_vect[nodePos]=newNode;
-        qDebug() << "Existing node" ;
+         //qDebug() << "Existing node" ;
     }
 }
 
@@ -176,7 +178,7 @@ int Artnet::nodeExists(uint8_t *attribute, searchBy_t searchBy)  //add check siz
 void Artnet::printNodes()
 {
     char ip[20], nm[20], mac[25];
-    qDebug() << "Nodes List:" ;
+     //qDebug() << "Nodes List:" ;
     if (node_vect.size()==0) return;
 
     for(int i=0; i<node_vect.size(); i++)
@@ -185,19 +187,19 @@ void Artnet::printNodes()
         sprintf(nm, "%u.%u.%u.%u", node_vect[i].Subnet[0], node_vect[i].Subnet[1], node_vect[i].Subnet[2], node_vect[i].Subnet[3]);
         sprintf(mac, "%x.%x.%x.%x.%x.%x", node_vect[i].MAC[0], node_vect[i].MAC[1], node_vect[i].MAC[2], node_vect[i].MAC[3], node_vect[i].MAC[4], node_vect[i].MAC[5]);
 
-        qDebug() << ip << "[ " << node_vect[i].ShortName << " ] ---------------" ;
-        qDebug() << "netmask: " << nm ;
-        qDebug() << "MAC: " << mac ;
-        qDebug() << "Long name: " << node_vect[i].LongName ;
-        qDebug() << "DHCP capable: " << node_vect[i].NodeIsDHCPCapable ;
-        qDebug() << "    DHCP enabled: " << node_vect[i].NodesIPIsDHCPConfigured  ;
+         //qDebug() << ip << "[ " << node_vect[i].ShortName << " ] ---------------" ;
+         //qDebug() << "netmask: " << nm ;
+         //qDebug() << "MAC: " << mac ;
+         //qDebug() << "Long name: " << node_vect[i].LongName ;
+         //qDebug() << "DHCP capable: " << node_vect[i].NodeIsDHCPCapable ;
+         //qDebug() << "    DHCP enabled: " << node_vect[i].NodesIPIsDHCPConfigured  ;
     }
 }
 
 void Artnet::printNodes(std::vector<node_t> nodesVect)
 {
     char ip[20], nm[20], mac[25];
-    qDebug() << "Nodes List:" ;
+     //qDebug() << "Nodes List:" ;
     if (nodesVect.size()==0) return;
 
     for(int i=0; i<nodesVect.size(); i++)
@@ -206,12 +208,12 @@ void Artnet::printNodes(std::vector<node_t> nodesVect)
         sprintf(nm, "%u.%u.%u.%u", nodesVect[i].Subnet[0], nodesVect[i].Subnet[1], nodesVect[i].Subnet[2], nodesVect[i].Subnet[3]);
         sprintf(mac, "%x.%x.%x.%x.%x.%x", nodesVect[i].MAC[0], nodesVect[i].MAC[1], nodesVect[i].MAC[2], nodesVect[i].MAC[3], nodesVect[i].MAC[4], nodesVect[i].MAC[5]);
 
-        qDebug() << ip << "[ " << nodesVect[i].ShortName << " ] ---------------" ;
-        qDebug() << "netmask: " << nm ;
-        qDebug() << "MAC: " << mac ;
-        qDebug() << "Long name: " << nodesVect[i].LongName ;
-        qDebug() << "DHCP capable: " << nodesVect[i].NodeIsDHCPCapable ;
-        qDebug() << "DHCP enabled: " << nodesVect[i].NodesIPIsDHCPConfigured  ;
+         //qDebug() << ip << "[ " << nodesVect[i].ShortName << " ] ---------------" ;
+         //qDebug() << "netmask: " << nm ;
+         //qDebug() << "MAC: " << mac ;
+         //qDebug() << "Long name: " << nodesVect[i].LongName ;
+         //qDebug() << "DHCP capable: " << nodesVect[i].NodeIsDHCPCapable ;
+         //qDebug() << "DHCP enabled: " << nodesVect[i].NodesIPIsDHCPConfigured  ;
          
     }
 }
@@ -229,7 +231,7 @@ awaitable<void> Artnet::handle_receive(boost::asio::io_context &io_context, udp:
     // Spawn another coroutine to continue receiving data
     co_spawn(io_context, handle_receive(io_context, socket), detached);
 
-    // qDebug() << "Received " << recv_size << " bytes from "<< sender_end.address().to_string() ;
+    //  //qDebug() << "Received " << recv_size << " bytes from "<< sender_end.address().to_string() ;
     if(recv_size != 0) Artnet::megDecode(recv_buffer);
 
 } 
@@ -244,7 +246,7 @@ awaitable<void> Artnet::artnet_broadcaster(boost::asio::io_context &io_context, 
   // Create an endpoint to send the data to
   #ifdef LOCAL_TEST
   boost::asio::ip::udp::endpoint remote_endpoint(boost::asio::ip::address_v4::broadcast(), 1234);
-  qDebug() << "Local" ;
+   //qDebug() << "Local" ;
   #else 
   boost::asio::ip::udp::endpoint remote_endpoint(boost::asio::ip::address_v4::broadcast(), 6454);
   #endif
@@ -255,7 +257,7 @@ awaitable<void> Artnet::artnet_broadcaster(boost::asio::io_context &io_context, 
   {
     case OpPoll:
       {
-        qDebug() << "Sending OpPoll request" ;
+         //qDebug() << "Sending OpPoll request" ;
         uint8_t transmitBuffer[sizeof(SArtPoll)];
         SArtPoll rst;
         Artnet::genArtPollRequest(&rst);
@@ -266,7 +268,7 @@ awaitable<void> Artnet::artnet_broadcaster(boost::asio::io_context &io_context, 
 
     case OpIpProg:
       {
-        qDebug() << "Sending IpProg request" ;
+         //qDebug() << "Sending IpProg request" ;
         uint8_t transmitBuffer[sizeof(SIpProg)]={};
         SIpProg msg;
         Artnet::genIpProgMsg(&msg);
@@ -276,7 +278,7 @@ awaitable<void> Artnet::artnet_broadcaster(boost::asio::io_context &io_context, 
       break;
 
     default:
-      qDebug() << "Unhandled opcode" ;
+       //qDebug() << "Unhandled opcode" ;
       break;
   }
   
@@ -469,8 +471,19 @@ int Artnet::sendArtAdress(node_t node, ArtAddressPacket artAddressPacket)
 
     size_t bytes_sent = socket.send_to(boost::asio::buffer(tx_buff), remote_endpoint);
     std::cout << bytes_sent << std::endl;
-    socket.close();
-    socket.cancel();
+    try {
+        socket.close();
+
+    } catch (boost::wrapexcept<boost::system::system_error> e) {
+        std::cout << "caught\n";
+    }
+    try {
+        socket.cancel();
+
+    } catch (boost::wrapexcept<boost::system::system_error> e) {
+        std::cout << "caught\n";
+    }
+    std::cout << "test" << "\n";
     if( bytes_sent < 0) 
     {
         std::cout << "No bytes sent" << std::endl;
@@ -486,9 +499,9 @@ void Artnet::printNodes(std::vector<node_str_t> nodesVect)
     if (nodesVect.size()>0)
     for (int i=0; i<nodesVect.size(); i++)
     {
-        qDebug() << QString::fromStdString(nodesVect[i].IpAddress) << ":" << QString::fromStdString(nodesVect[i].Port) << "[ " << QString::fromStdString(nodesVect[i].ShortName) << " ]" << "_______" ;
-        qDebug() << QString::fromStdString(nodesVect[i].Subnet) ;
-        qDebug() << QString::fromStdString(nodesVect[i].MAC) ;
-        qDebug() << QString::fromStdString(nodesVect[i].LongName);
+         //qDebug() << QString::fromStdString(nodesVect[i].IpAddress) << ":" << QString::fromStdString(nodesVect[i].Port) << "[ " << QString::fromStdString(nodesVect[i].ShortName) << " ]" << "_______" ;
+         //qDebug() << QString::fromStdString(nodesVect[i].Subnet) ;
+         //qDebug() << QString::fromStdString(nodesVect[i].MAC) ;
+         //qDebug() << QString::fromStdString(nodesVect[i].LongName);
     }
 }
