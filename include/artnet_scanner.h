@@ -72,6 +72,15 @@ struct ArtAddressPacket
     uint8_t led_cmd;
 };
 
+struct OpIpProgPacket
+{
+    char ip[4][4];
+    char netMask[4][4];
+    char gateWay[4][4];
+    bool enDHCP;
+    bool resetConig;
+};
+
 
 class Artnet{
     private:
@@ -210,9 +219,9 @@ class Artnet{
         static std::vector <node_str_t> result_to_str(std::vector<node_t> nodeVect);
 
         /**
-         * @brief Organize artAddress information in a buffer ti be sent
+         * @brief Organize artAddress information in a buffer to be sent
          * 
-         * @param artAddressPacket artAdressInfomations
+         * @param artAddressPacket artAdress Infomations
          * @param buff [OUT] output buffer to store pakcet informations
          */
         static void genArtAddressPacket(ArtAddressPacket artAddressPacket, uint8_t *buff);
@@ -225,6 +234,23 @@ class Artnet{
          * @return int, 0 if sending done, else failed  
          */
         static int sendArtAdress(node_t node, ArtAddressPacket artAddressPacket);
+        
+        /**
+         * @brief Organize artAddress information in a buffer to be sent
+         * 
+         * @param opIpProgPacket New Ip configuration
+         * @param buff [OUT] output buffer to store pakcet informations
+         */
+        static void genOpIpProgPacket(OpIpProgPacket opIpProgPacket, uint8_t *buff);
+
+        /**
+         * @brief Send OpIpProg message
+         * 
+         * @param node target node
+         * @param opIpProgPacket  packet to be sent
+         * @return int, 0 if sending done, else failed  
+         */
+        static int sendOpIpProg(node_t node, OpIpProgPacket opIpProgPacket);
         
 };
 
